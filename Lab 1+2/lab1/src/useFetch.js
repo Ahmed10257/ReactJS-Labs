@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function useFetch(url) {
   const [data, setData] = useState(null);
@@ -10,17 +11,11 @@ function useFetch(url) {
     setData(null);
     setError(null);
 
-    fetch(url)
+    axios
+      .get(url)
       .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw response;
-        }
-      })
-      .then((data) => {
         setLoading(false);
-        setData(data);
+        setData(response.data);
       })
       .catch((error) => {
         setLoading(false);

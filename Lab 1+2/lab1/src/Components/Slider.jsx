@@ -77,10 +77,10 @@ export default class Slider extends Component {
         </div>
         <div className="d-flex justify-content-between w-50 m-5">
           <button
-            className={`btn btn-primary ${styles.button_width}`}
-            onClick={this.nextImage}
+            className={`btn btn-success ${styles.button_width}`}
+            onClick={this.autoPlay}
           >
-            Next
+            Play
           </button>
           <button
             className={`btn btn-warning ${styles.button_width}`}
@@ -89,10 +89,10 @@ export default class Slider extends Component {
             Previous
           </button>
           <button
-            className={`btn btn-success ${styles.button_width}`}
-            onClick={this.autoPlay}
+            className={`btn btn-primary ${styles.button_width}`}
+            onClick={this.nextImage}
           >
-            Play
+            Next
           </button>
           <button
             className={`btn btn-danger ${styles.button_width}`}
